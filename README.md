@@ -262,3 +262,5 @@ git config --global user.email "votre.email@example.com"
 ---
 
 Développé pour l'enseignement de ModBus avec Python 3.13, UV et Git 🐍⚡📚
+
+## Projet Piscine à vague et niveau de chlore
