@@ -17,7 +17,7 @@ Ce projet utilise Python et la bibliothèque pymodbus pour créer un serveur et 
 **Sur Ubuntu/Debian :**
 ```bash
 sudo apt update
-sudo apt install git
+sudo apt install gi
 ```
 
 **Sur macOS avec Homebrew :**
