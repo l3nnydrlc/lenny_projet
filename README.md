@@ -263,4 +263,40 @@ git config --global user.email "votre.email@example.com"
 
 Développé pour l'enseignement de ModBus avec Python 3.13, UV et Git 🐍⚡📚
 
-## Projet Piscine à vague et niveau de chlore
+## 🌊 Piscine à Vagues Intelligente – Projet Python
+
+Bienvenue dans notre projet collaboratif visant à créer une **piscine à vagues intelligente**, connectée et autonome grâce à des capteurs, actionneurs et une gestion en Python 🐍.
+
+Ce projet est réalisé par **deux entreprises indépendantes** qui collaborent autour de deux modules distincts :
+
+---
+
+## 🧪 Entreprise 1 – Gestion du Taux de Chlore
+
+Cette partie du projet assure une **qualité optimale de l’eau** en gérant automatiquement le taux de chlore.
+
+### 🔧 Composants
+- **Capteur de chlore** : Mesure en temps réel la concentration de chlore dans l'eau.
+- **Actionneur** : Ajoute ou retire du chlore selon les besoins.
+
+### 🧠 Fonctionnement
+> Si le taux de chlore est trop bas ou trop haut, le système ajuste automatiquement via l'actionneur pour maintenir un niveau sécurisé pour les nageurs. 🌡️
+
+---
+
+## 🌊 Entreprise 2 – Gestion des Vagues
+
+Cette partie du projet s'occupe de **générer des vagues dynamiques** pour une expérience de baignade fun et réaliste 🎢.
+
+### 🔧 Composants
+- **Capteur de pression** : Mesure la pression exercée par l'eau, utile pour la synchronisation des vagues.
+- **Capteur de mouvement (flotteur)** : Analyse les mouvements de surface pour estimer la hauteur des vagues.
+- **Générateur de vagues** : Fonctionne selon une fonction sinusoïdale 🌀 pour simuler le mouvement naturel de l'eau.
+
+### 🧠 Fonctionnement
+> Les données des capteurs sont utilisées pour ajuster la sinusoïde qui pilote le moteur de vagues. Les vagues sont donc adaptatives et sécurisées 🌊.
+
+---
+
+## 🗂️ Arborescence du Projet
+
