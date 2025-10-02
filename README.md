@@ -1,10 +1,20 @@
-# 🌊 Piscine à Vagues Intelligente – Projet Python
+# **🌊 Piscine à Vagues Intelligente – Projet Python**
 
-Bienvenue dans notre projet collaboratif visant à créer une **piscine à vagues intelligente**, connectée et autonome grâce à des capteurs et actionneurs
+Nous sommes **deux entreprises indépendantes**, spécialisées dans les technologies embarquées et les systèmes automatisés. Ce projet marque notre première **collaboration technique autour d’un défi innovant** : créer un système intelligent pour une **piscine à vagues**.
 
-Ce projet est réalisé par **deux entreprises indépendantes** qui collaborent autour de deux modules distincts :
+- 🧪 **Entreprise 1** : Spécialisée dans les systèmes de traitement de l’eau.
+- 🌊 **Entreprise 2** : Experte dans la simulation de mouvement et la gestion dynamique de fluides.
 
----
+## 🎯 Notre objectif
+
+Développer une **piscine connectée et autonome**, capable de :
+
+- Surveiller et réguler automatiquement le **taux de chlore** pour garantir une eau saine.
+- Générer des **vagues dynamiques et réalistes** grâce à une modélisation physique (fonction sinusoïdale) interfacé avec des **capteurs et actionneurs**.
+
+## 🔍 Présentation des modules
+
+Le projet est divisé en **deux modules distincts**, chacun géré par l’une des entreprises :
 
 ## 🧪 Entreprise 1 – Gestion du Taux de Chlore
 
@@ -21,7 +31,7 @@ Cette partie du projet assuré par Lenny DERLICA assure une **qualité optimale 
 
 ## 🌊 Entreprise 2 – Gestion des Vagues
 
-Cette partie du projet s'occupe de **générer des vagues dynamiques** pour une expérience de baignade fun et réaliste 🎢.
+Cette partie du projet assuré par Sacha IGNAM s'occupe de **générer des vagues dynamiques** pour une expérience de baignade fun et réaliste 🎢.
 
 ### 🔧 Composants
 - **Capteur de pression** : Mesure la pression exercée par l'eau, utile pour la synchronisation des vagues.
