@@ -55,6 +55,8 @@ Cette partie du projet assuré par Sacha IGNAM s'occupe de **générer des vague
 - **Capteur de mouvement (flotteur)** : Analyse les mouvements de surface pour estimer la hauteur des vagues.
 - **Générateur de vagues** : Fonctionne selon une fonction sinusoïdale 🌀 pour simuler le mouvement naturel de l'eau.
  
+---
+
 ### 🧠 Fonctionnement
 
 Les données des capteurs sont utilisées pour ajuster la sinusoïde qui pilote le moteur de vagues. Les vagues sont donc adaptatives et sécurisées 🌊.
