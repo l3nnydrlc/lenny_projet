@@ -14,3 +14,5 @@ context = ModbusServerContext(devices = store, single=True)
 
 # Démarrer le serveur sur le port 5020
 StartTcpServer(context=context, address=("0.0.0.0", 502))
+
+
