@@ -31,7 +31,7 @@ Cette partie du projet assuré par Lenny DERLICA assure une **qualité optimale 
 ---
 
 ### 🧠 Fonctionnement
-> Si le taux de chlore ne correspond pas à la demande, le système ajuste automatiquement via l'actionneur pour maintenir un niveau sécurisé pour les nageurs. 🌡️
+ Si le taux de chlore ne correspond pas à la demande, le système ajuste automatiquement via l'actionneur pour maintenir un niveau sécurisé pour les nageurs. 🌡️
 
 ---
 
@@ -45,7 +45,7 @@ Cette partie du projet assuré par Sacha IGNAM s'occupe de **générer des vague
 - **Générateur de vagues** : Fonctionne selon une fonction sinusoïdale 🌀 pour simuler le mouvement naturel de l'eau.
  
 ### 🧠 Fonctionnement
-> Les données des capteurs sont utilisées pour ajuster la sinusoïde qui pilote le moteur de vagues. Les vagues sont donc adaptatives et sécurisées 🌊.
+Les données des capteurs sont utilisées pour ajuster la sinusoïde qui pilote le moteur de vagues. Les vagues sont donc adaptatives et sécurisées 🌊.
 
 ---
 
