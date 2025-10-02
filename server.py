@@ -8,7 +8,7 @@ import numpy
 import matplotlib.pyplot as plt
 
 # Adresse du registre où la taille des vagues sera stockée
-vague_REGISTER = 3
+vague_REGISTER = 1
 STATUS_COIL = 0
 
 def vague_simulation(context, slave_id=0x00):
