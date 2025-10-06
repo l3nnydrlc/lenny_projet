@@ -3,8 +3,8 @@
 
 Nous sommes **deux entreprises indépendantes**, aux expertises complémentaires. Ce projet marque notre première **collaboration technique**, réunie autour d’un défi technologique innovant : développer un système intelligent pour une **piscine à vagues**.
 
-- 🧪 **Entreprise 1** : Spécialisée dans les systèmes de traitement de l’eau.
-- 🌊 **Entreprise 2** : Experte dans la simulation de mouvement et la gestion dynamique de fluides.
+- 🧪 **pHmetrics** : Spécialisée dans les systèmes de traitement de l’eau.
+- 🌊 **SimuFluid** : Experte dans la simulation de mouvement et la gestion dynamique de fluides.
 
 En conjuguant nos savoir-faire, nous visons à concevoir une solution intégrée, performante et durable.
 
@@ -25,10 +25,10 @@ Développer une **piscine connectée et autonome**, capable de :
 
 Le projet est divisé en **deux modules distincts**, chacun géré par l’une des entreprises :
 
-## 🧪 Entreprise 1 – Gestion du Taux de Chlore
+## 🧪 pHmetrics – Gestion du Taux de Chlore
 
 
-Cette partie du projet assuré par Lenny DERLICA assure une **qualité optimale de l’eau** en gérant automatiquement le taux de chlore.
+Cette partie du projet assuré par Lenny DERLICA assure une **qualité optimale de l’eau** en gérant automatiquement le taux de chlore pour avoir un pH neutre (7,2).
 
 ### 🔧 Composants
 
@@ -40,11 +40,11 @@ Cette partie du projet assuré par Lenny DERLICA assure une **qualité optimale 
 ### 🧠 Fonctionnement
 
 
- Si le taux de chlore ne correspond pas à la demande, le système ajuste automatiquement via l'actionneur pour maintenir un niveau sécurisé pour les nageurs. 🌡️
+ Si le taux de chlore ne correspond pas à la demande (7,2), le système ajuste automatiquement via l'actionneur pour maintenir un niveau sécurisé pour les nageurs. 🌡️
 
 ---
 
-## 🌊 Entreprise 2 – Gestion des Vagues
+## 🌊 SimuFluid – Gestion des Vagues
 
 
 Cette partie du projet assuré par Sacha IGNAM s'occupe de **générer des vagues dynamiques** pour une expérience de baignade fun et réaliste 🎢.
@@ -58,7 +58,7 @@ Cette partie du projet assuré par Sacha IGNAM s'occupe de **générer des vague
 
 ### 🧠 Fonctionnement
 
-Les données du capteur sont utilisées pour ajuster la sinusoïde qui pilote le moteur de vagues. Les vagues sont donc adaptatives et sécurisées 🌊.
+Les données du capteur sont utilisées pour ajuster la sinusoïde qui pilote le moteur de vagues. Les vagues varie entre 0,5 et 2,5 mètres 🌊.
 
 ---
 
