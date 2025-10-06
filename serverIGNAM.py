@@ -45,7 +45,7 @@ def vague_simulation(context, slave_id=0x00):
     ax2.set_title('Etat tout ou rien des moteurs')
     ax2.legend()
     ax2.grid(True)
-    
+
     last_vague = None
     while True:
         status = context[slave_id].getValues(1, STATUS_COIL)[0]
@@ -55,13 +55,26 @@ def vague_simulation(context, slave_id=0x00):
             context[slave_id].setValues(4, vague_REGISTER, [int(vague)])
             temps_values.append(t)
             vague_values.append(vague/10)
+            # Etat des moteurs
+            moteurall = context[slave_id].getValues(1, COIL_MOTEURALL)[0]
+            moteurstop = context[slave_id].getValues(1, COIL_MOTEURSTOP)[0]
+            moteurall_values.append(moteurall)
+            moteurstop_values.append(moteurstop)
             if len(temps_values) > 50:
                 temps_values.pop(0)
                 vague_values.pop(0)
+                moteurall_values.pop(0)
+                moteurstop_values.pop(0)
             line.set_xdata(temps_values)
             line.set_ydata(vague_values)
+            line_all.set_xdata(temps_values)
+            line_all.set_ydata(moteurall_values)
+            line_stop.set_xdata(temps_values)
+            line_stop.set_ydata(moteurstop_values)
             ax1.relim()
             ax1.autoscale_view()
+            ax2.relim()
+            ax2.autoscale_view()
             fig.canvas.draw()
             fig.canvas.flush_events()
             # Détection de l'évolution de la vague
@@ -78,67 +91,21 @@ def vague_simulation(context, slave_id=0x00):
                     moteur_txt = "moteur normal"
             else:
                 moteur_txt = "moteur normal"
-            last_vague = None
-            while True:
-                status = context[slave_id].getValues(1, STATUS_COIL)[0]
-                if status:  # Si la piscine fonctionne
-                    t = time.time() - start_time
-                    vague = offset + amplitude * math.sin(2 * math.pi * t / periode)
-                    context[slave_id].setValues(4, vague_REGISTER, [int(vague)])
-                    temps_values.append(t)
-                    vague_values.append(vague/10)
-                    # Etat des moteurs
-                    moteurall = context[slave_id].getValues(1, COIL_MOTEURALL)[0]
-                    moteurstop = context[slave_id].getValues(1, COIL_MOTEURSTOP)[0]
-                    moteurall_values.append(moteurall)
-                    moteurstop_values.append(moteurstop)
-                    if len(temps_values) > 50:
-                        temps_values.pop(0)
-                        vague_values.pop(0)
-                        moteurall_values.pop(0)
-                        moteurstop_values.pop(0)
-                    line.set_xdata(temps_values)
-                    line.set_ydata(vague_values)
-                    line_all.set_xdata(temps_values)
-                    line_all.set_ydata(moteurall_values)
-                    line_stop.set_xdata(temps_values)
-                    line_stop.set_ydata(moteurstop_values)
-                    ax1.relim()
-                    ax1.autoscale_view()
-                    ax2.relim()
-                    ax2.autoscale_view()
-                    fig.canvas.draw()
-                    fig.canvas.flush_events()
-                    # Détection de l'évolution de la vague
-                    if last_vague is not None:
-                        if vague > last_vague:
-                            context[slave_id].setValues(1, COIL_MOTEURALL, [1])
-                            context[slave_id].setValues(1, COIL_MOTEURSTOP, [0])
-                            moteur_txt = "moteurall"
-                        elif vague < last_vague:
-                            context[slave_id].setValues(1, COIL_MOTEURALL, [0])
-                            context[slave_id].setValues(1, COIL_MOTEURSTOP, [1])
-                            moteur_txt = "moteurstop"
-                        else:
-                            moteur_txt = "moteur normal"
-                    else:
-                        moteur_txt = "moteur normal"
-                    last_vague = vague
-                else:
-                    moteur_txt = "moteur normal"
-                time.sleep(0.1)
-                print(f"taille des vagues actuel: {vague/10:.1f}, status: {'ON' if status else 'OFF'} état moteur: {moteur_txt}")
+            last_vague = vague
+        else:
+            moteur_txt = "moteur normal"
+        time.sleep(0.1)
+        print(f"taille des vagues actuel: {vague/10:.1f}, status: {'ON' if status else 'OFF'} état moteur: {moteur_txt}")
 
 if __name__ == "__main__":
     # Création du datastore Modbus avec un registre de 10 mots
     device = ModbusDeviceContext(
-        co=ModbusSequentialDataBlock(0, [True, 0, 0] + [0]*7),   
-        ir=ModbusSequentialDataBlock(0, [72]*10),  
-        di=ModbusSequentialDataBlock(0, [0]*10)
+        co=ModbusSequentialDataBlock(0, [True]*10),    # en marche initialement
+        ir=ModbusSequentialDataBlock(0, [10]*10)  # 1m taille des vagues initial
     )
     context = ModbusServerContext(devices=device, single=True)
 
-    # Lancement du thread de simulation de pH
+    # Lancement du thread de simulation de la taille des vagues
     sim_thread = Thread(target=vague_simulation, args=(context,))
     sim_thread.daemon = True
     sim_thread.start()
