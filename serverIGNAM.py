@@ -88,12 +88,12 @@ def vague_simulation(context, slave_id=0x00):
                     context[slave_id].setValues(1, COIL_MOTEURSTOP, [1])
                     moteur_txt = "moteurstop"
                 else:
-                    moteur_txt = "moteur normal"
+                    moteur_txt = "moteur arrêter"
             else:
-                moteur_txt = "moteur normal"
+                moteur_txt = "moteur arrêter"
             last_vague = vague
         else:
-            moteur_txt = "moteur normal"
+            moteur_txt = "moteur arrêter"
         time.sleep(0.1)
         print(f"taille des vagues actuel: {vague/10:.1f}, status: {'ON' if status else 'OFF'} état moteur: {moteur_txt}")
 
